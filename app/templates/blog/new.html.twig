@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nuevo Post{% endblock %}
+
+{% block body %}
+    <main class="container">
+        <h1>Crear nuevo artículo</h1>
+
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <button type="submit" class="primary">Guardar Artículo</button>
+        {{ form_end(form) }}
+
+        <a href="{{ path('app_blog_index') }}">Cancelar</a>
+    </main>
+{% endblock %}

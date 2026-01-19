@@ -1,0 +1,7 @@
+
+symfony new . --webapp
+
+docker compose up -d
+symfony console doctrine:zenPaw-tech:create
+
+symfony server:start -d
