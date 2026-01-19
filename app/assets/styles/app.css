@@ -1,3 +1,23 @@
+:root{
+    --background--color: #1a1a1d;
+
+    --scroll-background-color: #1f2d38;
+    --scroll-color: #11191f;
+}
 body {
-    background-color: #1a1a1d;
+    background-color: var(--background--color);
+
+}
+/* Scroll */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--scroll-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--scroll-background-color);
+    border-radius: 5px;
 }
