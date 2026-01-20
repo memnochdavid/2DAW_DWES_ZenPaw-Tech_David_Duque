@@ -3,14 +3,22 @@
 {% block title %}Nuevo Post{% endblock %}
 
 {% block body %}
-    <main class="container">
-        <h1>Crear nuevo artículo</h1>
+    <main>
+        <div class="title-section">
+            <div class="tittle-new">
+                <h1>Crear nuevo artículo</h1>
+            </div>
+        </div>
+        <div class="form-content">
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <div class="form-buttons">
+                <button type="submit" class="btn btn-blue">Guardar Artículo</button>
+                <a href="{{ path('app_blog_index') }}" class="btn btn-blue">Cancelar</a>
+            </div>
+            {{ form_end(form) }}
 
-        {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <button type="submit" class="primary">Guardar Artículo</button>
-        {{ form_end(form) }}
+        </div>
 
-        <a href="{{ path('app_blog_index') }}">Cancelar</a>
     </main>
 {% endblock %}

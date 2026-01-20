@@ -3,26 +3,32 @@
 {% block title %}ZenPaw Tech - Inicio{% endblock %}
 
 {% block body %}
-    <main class="container">
-        <h1>ZenPaw Tech Blog</h1>
-        <p>Últimos artículos publicados</p>
+    <main>
+        <div class="title-section">
+            <h1>ZenPaw Tech Blog</h1>
+            <p>Últimos artículos publicados</p>
+        </div>
 
-        {% for post in posts %}
-            <article>
-                <header>
-                    <h2>
-                        <a href="{{ path('app_blog_show', {slug: post.slug}) }}">
-                            {{ post.title }}
-                        </a>
-                    </h2>
-                </header>
-                {{ post.summary }}
-                <footer>
-                    <small>Publicado el {{ post.publishedAt|date('d/m/Y') }}</small>
-                </footer>
-            </article>
-        {% else %}
-            <p>No hay artículos todavía. ¡Es hora de crear el primero!</p>
-        {% endfor %}
+        <div class="container container-post">
+
+
+            {% for post in posts %}
+                <article class="post-preview">
+                    <div class="post-title">
+                        <h2>
+                            <a href="{{ path('app_blog_show', {slug: post.slug}) }}">
+                                {{ post.title }}
+                            </a>
+                        </h2>
+                    </div>
+                    <p class="post-summary">{{ post.summary }}</p>
+                    <div class="post-date">
+                        <p>Publicado el {{ post.publishedAt|date('d/m/Y') }}</p>
+                    </div>
+                </article>
+            {% else %}
+                <p>No hay artículos todavía. ¡Es hora de crear el primero!</p>
+            {% endfor %}
+        </div>
     </main>
 {% endblock %}

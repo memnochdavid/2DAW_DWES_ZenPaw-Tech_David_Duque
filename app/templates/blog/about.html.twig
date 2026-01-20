@@ -3,19 +3,22 @@
 {% block title %}Acerca de ZenPaw Tech{% endblock %}
 
 {% block body %}
-    <main class="container">
-        <article>
-            <h1>Sobre ZenPaw Tech</h1>
-            <p>Este blog ha sido creado como parte del Seminario 1 "Symfony 'Hands-on' - Mi
-                Primer Blog Tecnológico" de la asignatura de Desarrollo en Entorno Servidor.</p>
-            <p><strong>Tecnologías utilizadas:</strong></p>
-            <ul>
-                <li>Symfony 8</li>
-                <li>Docker</li>
-                <li>Doctrine ORM</li>
-                <li>Twig</li>
-            </ul>
-            <a href="{{ path('app_blog_index') }}" class="contrast">Volver al inicio</a>
-        </article>
+    <main>
+        <div class="back-link-container">
+            <a href="{{ path('app_blog_index') }}" class="btn btn-blue">← Volver al listado</a>
+        </div>
+        <div class="container container-post">
+            <article class="post-preview">
+                <div class="post-title">
+                    <h1>Sobre ZenPaw Tech</h1>
+                </div>
+                <div class="post-detail">
+                    <p>Este blog ha sido creado como parte del Seminario 1 "Symfony 'Hands-on' - Mi
+                        Primer Blog Tecnológico" de la asignatura de Desarrollo en Entorno Servidor.</p>
+
+                </div>
+            </article>
+        </div>
+
     </main>
 {% endblock %}

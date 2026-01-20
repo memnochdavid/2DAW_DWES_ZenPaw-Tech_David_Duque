@@ -3,19 +3,26 @@
 {% block title %}{{ post.title }}{% endblock %}
 
 {% block body %}
-    <main class="container">
-        <article>
-            <header>
-                <h1>{{ post.title }}</h1>
-                <p>Publicado el {{ post.publishedAt|date('d/m/Y') }}</p>
-            </header>
 
-            {# Usamos nl2br para respetar los saltos de línea del contenido #}
-            {{ post.content|nl2br }}
+    <main>
+        <div class="back-link-container">
+            <a href="{{ path('app_blog_index') }}" class="btn btn-blue">← Volver al listado</a>
+        </div>
+        <div class="container container-post">
+            <article class="post-preview">
+                <div class="post-title">
+                    <h1>{{ post.title }}</h1>
+                </div>
+                <div class="post-detail">
+                    {# Usamos nl2br para respetar los saltos de línea del contenido #}
+                    <p>{{ post.content|nl2br }}</p>
+                </div>
 
-            <footer>
-                <a href="{{ path('app_blog_index') }}">← Volver al listado</a>
-            </footer>
-        </article>
+
+                <div class="post-date">
+                    <p>Publicado el {{ post.publishedAt|date('d/m/Y') }}</p>
+                </div>
+            </article>
+        </div>
     </main>
 {% endblock %}
