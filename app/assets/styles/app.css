@@ -256,11 +256,13 @@ main{
                     align-items: center;
                     label{
                         width: 10%;
+                        font-weight: bold;
                     }
                     input, textarea{
                         width: 90%;
                         flex: 1;
                         transition: 0.3s ease;
+                        background-color: var(--color-primary-clearer);
                     }
                     textarea{
                         padding: 20px;
@@ -271,6 +273,8 @@ main{
                         border: none;
                         color: var(--color-text-dark);
                         transition: 0.3s;
+                        resize: vertical;
+
                     }
                     input{
                         padding: 20px;
@@ -282,12 +286,16 @@ main{
                         transition: 0.3s;
                     }
                     input:hover, textarea:hover{
-                        background-color: var(--color-text-clear);
+                        background-color: var(--color-button-blue-hover);
                         scale: 1 1.1;
                     }
-                    input:active, textarea:hover{
-                        border: none;
+                    input:focus, textarea:focus{
+                        background-color: var(--color-secondary-clear);
+                        border: 2px solid var(--scroll-background-color);
                     }
+                    /*input:active, textarea:active{*/
+                    /*    border: none;*/
+                    /*}*/
                 }
             }
         }
