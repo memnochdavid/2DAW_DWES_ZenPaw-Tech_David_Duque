@@ -33,7 +33,7 @@ class BlogController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            // Opcional: Si no quieres que el usuario escriba la fecha a mano
+
             if (!$post->getPublishedAt()) {
                 $post->setPublishedAt(new \DateTimeImmutable());
             }

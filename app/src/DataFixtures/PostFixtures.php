@@ -19,7 +19,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 'autor' => 'david',
                 'summary' => 'Hoy empiezo mi aventura con el framework PHP más potente.',
                 'content' => "Symfony es genial porque nos da herramientas como el MakerBundle.\n\nEn este blog aprenderemos mucho sobre Docker y Twig.",
-                'categories' => [3, 4] // Symfony, Tutoriales
+                'categories' => [3, 4]
             ],
             [
                 'title' => '¿Por qué usar Docker?',
@@ -27,7 +27,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 'autor' => 'david',
                 'summary' => 'Docker nos permite tener entornos idénticos en cualquier PC.',
                 'content' => "Olvídate de 'en mi máquina funciona'.\n\nCon Docker Compose, levantamos la base de datos y el servidor en segundos.",
-                'categories' => [0, 2] // Tecnología, Docker
+                'categories' => [0, 2]
             ],
             [
                 'title' => 'Twig: El motor de plantillas',
@@ -35,7 +35,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 'autor' => 'pepe',
                 'summary' => 'Aprende a separar la lógica de negocio de la visualización.',
                 'content' => "Twig es elegante, rápido y seguro.\n\nPermite herencia de plantillas, lo que nos ahorra mucho código repetido.",
-                'categories' => [1, 4] // Programación, Tutoriales
+                'categories' => [1, 4]
             ]
         ];
 

@@ -208,9 +208,9 @@ main{
                     font-size: var(--text-size-large);
                 }
             }
-            .post-date{
+            .post-date, .post-categories{
                 padding: var(--padding-normal) var(--padding-huge);
-                p{
+                p, span{
                     font-size: var(--text-size-small);
                     font-weight: bold;
                 }
@@ -301,7 +301,6 @@ main{
                         color: var(--color-text-dark);
                         transition: 0.3s;
                         resize: vertical;
-
                     }
                     input{
                         padding: 10px 20px;
@@ -312,7 +311,6 @@ main{
                         color: var(--color-text-dark);
                         transition: 0.3s;
                     }
-
                     select{
                         padding: 10px 20px;
                         border: 1px solid #ccc;
@@ -429,4 +427,12 @@ main{
 ::-webkit-scrollbar-thumb {
     background: var(--scroll-background-color);
     /*border-radius: var(--radius-small);*/
+}
+
+.button-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    /*width: 100%;*/
+    align-items: center;
 }

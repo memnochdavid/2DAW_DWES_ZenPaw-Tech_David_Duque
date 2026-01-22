@@ -14,10 +14,11 @@
                     <h1>{{ post.title }}</h1>
                 </div>
 
-                <div class="post-categories mb-3">
+                <div class="post-categories">
                     {% for category in post.category %}
-                        <span class="badge bg-secondary">{{ category.name }}</span>
+                        <span>| {{ category.name }} </span>
                     {% endfor %}
+                    |
                 </div>
 
                 <div class="post-detail">
