@@ -18,6 +18,8 @@ class PostType extends AbstractType
             ->add('content')
             ->add('publishedAt', null, [
                 'widget' => 'single_text',
+                'data' => new \DateTimeImmutable(),
+                'disabled' => true
             ])
         ;
     }
