@@ -18,6 +18,7 @@
     --color-button-blue-hover: #68ccff;
     --color-button-red: #d53838;
     --color-button-red-hover: #ff5f5f;
+    --color-button-red-dark: #b02323;
     --color-button-green: #28a745;
     --color-button-green-hover: #218838;
 
@@ -72,6 +73,13 @@ a, p, li, label, button{
     transition: 0.3s ease;
     font-weight: bold;
 }
+.btn-small{
+    padding: var(--padding-small) var(--padding-small);
+    border-radius: var(--radius-normal);
+    border: none;
+    transition: 0.3s ease;
+    font-weight: bold;
+}
 .btn:hover{
     cursor: pointer;
     scale: 1.1;
@@ -89,6 +97,16 @@ a, p, li, label, button{
 }
 .btn-blue:active{
     background-color: var(--color-primary-dark);
+}
+.btn-red{
+    background-color: var(--color-button-red);
+    color: var(--color-text-clear);
+}
+.btn-red:hover{
+    background-color: var(--color-button-red-hover);
+}
+.btn-red:active{
+    background-color: var(--color-button-red-dark);
 }
 .logo-text{
     font-size: var(--text-size-large);
@@ -163,7 +181,7 @@ main{
         height: 20vh;
         gap: 1rem;
         h1{
-            font-size: var(--text-size-huge);
+            font-size: var(--text-size-large);
         }
     }
     .container-post{
@@ -250,7 +268,7 @@ main{
                     cursor: pointer;
                 }
             }
-            #post{
+            #post, #category{
                 display: flex;
                 flex-direction: column;
                 gap: 1rem;
@@ -267,14 +285,14 @@ main{
                         width: 10%;
                         font-weight: bold;
                     }
-                    input, textarea{
+                    input, textarea, select{
                         width: 90%;
                         flex: 1;
                         transition: 0.3s ease;
                         background-color: var(--color-primary-clearer);
                     }
                     textarea{
-                        padding: 20px;
+                        padding: 10px 20px;
                         min-height: 100px;
                         width: 80%;
                         border-radius: 10px;
@@ -286,7 +304,7 @@ main{
 
                     }
                     input{
-                        padding: 20px;
+                        padding: 10px 20px;
                         width: 80%;
                         border-radius: 10px;
                         outline: none;
@@ -294,11 +312,36 @@ main{
                         color: var(--color-text-dark);
                         transition: 0.3s;
                     }
+
+                    select{
+                        padding: 10px 20px;
+                        border: 1px solid #ccc;
+                        border-radius: 5px;
+                        appearance: none;
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 1rem;
+                        justify-content: center;
+                        align-items: center;
+                        /*-webkit-appearance: none;*/
+                        /*-moz-appearance: none;*/
+                    }
+                    select option {
+                        background-color: transparent;
+                        color: var(--color-text-dark);
+                        font-size: 16px;
+                        /*width: 50%;*/
+                        text-align: center;
+                        padding: 5px;
+                    }
+                    select option:hover {
+                        background-color: var(--color-button-blue-hover);
+                    }
                     input:hover, textarea:hover{
                         background-color: var(--color-button-blue-hover);
-                        scale: 1 1.1;
+                        scale: 1 1.05;
                     }
-                    input:focus, textarea:focus{
+                    input:focus, textarea:focus, select:focus{
                         background-color: var(--color-secondary-clear);
                         border: 2px solid var(--scroll-background-color);
                     }
@@ -325,6 +368,55 @@ main{
     display: flex;
     flex-direction: column;
     gap: 1rem;
+}
+
+
+.table {
+    width: 80%;
+    border-collapse: collapse;
+    margin: var(--padding-large) 0;
+    font-size: var(--text-size-small);
+    font-family: var(--font-secondary), sans-serif;
+    box-shadow: 0 10px 10px var(--color-primary-dark);
+    /*border-radius: var(--radius-normal);*/
+    overflow: hidden;
+
+    thead {
+        background-color: var(--color-primary);
+        color: var(--color-text-dark);
+        tr {
+            th {
+                padding: var(--padding-normal);
+                text-align: left;
+                font-weight: bold;
+            }
+        }
+    }
+
+    tbody {
+        tr {
+            border-bottom: 1px solid var(--color-secondary-dark);
+            transition: 0.3s ease;
+
+            td {
+                padding: var(--padding-normal);
+
+            }
+        }
+
+        tr:nth-of-type(even) {
+            background-color: var(--color-secondary);
+        }
+
+        tr:last-of-type {
+            border-bottom: 2px solid var(--color-primary);
+        }
+
+        /*tr:hover {*/
+        /*    background-color: var(--color-primary-clearer);*/
+        /*    !*cursor: pointer;*!*/
+        /*}*/
+    }
 }
 
 /*scroll*/

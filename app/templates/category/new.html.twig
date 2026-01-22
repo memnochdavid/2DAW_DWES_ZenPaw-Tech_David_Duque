@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ZenPaw Tech{% endblock %}
+
+{% block body %}
+{#    <h1>Create new Category</h1>#}
+
+{#    {{ include('category/_form.html.twig') }}#}
+
+{#    <a href="{{ path('app_category_index') }}">back to list</a>#}
+    <main>
+        <div class="title-section">
+            <div class="tittle-new">
+                <h1>Create new Category</h1>
+            </div>
+        </div>
+        <div class="form-content">
+            {{ include('category/_form.html.twig') }}
+
+        </div>
+    </main>
+{% endblock %}
+

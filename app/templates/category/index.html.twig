@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ZenPaw Tech{% endblock %}
+
+{% block body %}
+    <main>
+        <div class="title-section">
+            <h1>Categorías</h1>
+            <p>Categorías existentes</p>
+        </div>
+
+        <div class="container container-post">
+
+
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for category in categories %}
+                    <tr>
+                        <td>{{ category.id }}</td>
+                        <td>{{ category.name }}</td>
+                        <td>
+                            <a href="{{ path('app_category_show', {'id': category.id}) }}" class="btn-small btn-blue">show</a>
+                            <a href="{{ path('app_category_edit', {'id': category.id}) }}" class="btn-small btn-blue">edit</a>
+                            <a href="{{ path('app_category_delete', {'id': category.id}) }}" class="btn-small btn-red">delete</a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="3">no records found</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            <a href="{{ path('app_category_new') }}" class="btn btn-blue">Nueva Categoría</a>
+        </div>
+    </main>
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

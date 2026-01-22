@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}ZenPaw Tech - Inicio{% endblock %}
+{% block title %}ZenPaw Tech{% endblock %}
 
 {% block body %}
     <main>
@@ -23,7 +23,14 @@
                     </div>
                     <p class="post-summary">{{ post.summary }}</p>
                     <div class="post-date">
-                        <p>Publicado el {{ post.publishedAt|date('d/m/Y') }} por {{ post.autor|capitalize }}</p>
+                        <p>
+                            Publicado el {{ post.publishedAt|date('d/m/Y') }} por {{ post.autor|capitalize }}
+                            <br>
+                            Categorías:
+                            {% for category in post.category %}
+                                <span class="badge bg-secondary">{{ category.name }}</span>
+                            {% endfor %}
+                        </p>
                     </div>
                 </article>
             {% else %}

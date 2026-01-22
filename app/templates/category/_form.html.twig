@@ -1,0 +1,9 @@
+{{ form_start(form) }}
+    {{ form_widget(form) }}
+    <div class="form-buttons">
+        <button class="btn btn-blue">{{ button_label|default('Save') }}</button>
+        <a href="{{ path('app_blog_index') }}" class="btn btn-blue">Cancelar</a>
+    </div>
+
+
+{{ form_end(form) }}
