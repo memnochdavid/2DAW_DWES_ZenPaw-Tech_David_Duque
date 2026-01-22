@@ -22,6 +22,12 @@
                 <ul>
                     <li><a href="{{ path('app_blog_new') }}" class="btn btn-blue">Nuevo Post</a></li>
                     <li><a href="{{ path('app_category_index') }}" class="btn btn-blue">Categorías</a></li>
+                    <li><a href="{{ path('app_user_index') }}" class="btn btn-blue">Usuarios</a></li>
+                    {% if app.user %}
+                        <li><a href="{{ path('app_logout') }}" class="btn btn-red">Logout ({{ app.user.userIdentifier }})</a></li>
+                    {% else %}
+                        <li><a href="{{ path('app_login') }}" class="btn btn-blue">Login</a></li>
+                    {% endif %}
                     <li><a href="{{ path('app_about') }}" class="btn btn-blue">Acerca de</a></li>
                 </ul>
             </nav>

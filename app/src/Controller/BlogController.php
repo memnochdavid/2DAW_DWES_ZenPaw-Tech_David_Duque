@@ -29,10 +29,30 @@ class BlogController extends AbstractController
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
         $post = new Post();
+
+        // Si el usuario está logueado, pre-rellenamos el autor
+        if ($this->getUser()) {
+            $post->setAutor($this->getUser()->getUserIdentifier());
+            // O si prefieres usar el nombre en lugar del email (identifier):
+            // $post->setAutor($this->getUser()->getName());
+        }
+
         $form = $this->createForm(PostType::class, $post);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            // Si el usuario está logueado, forzamos el autor al guardar (por seguridad, si quieres evitar que lo cambien)
+            if ($this->getUser()) {
+                 // Asumiendo que getUserIdentifier devuelve el email, o usa getName() si tu User tiene ese método y prefieres el nombre
+                 // $post->setAutor($this->getUser()->getName());
+                 // Como User tiene getName(), vamos a usarlo si está disponible, si no el identifier
+                 if (method_exists($this->getUser(), 'getName')) {
+                     $post->setAutor($this->getUser()->getName());
+                 } else {
+                     $post->setAutor($this->getUser()->getUserIdentifier());
+                 }
+            }
 
             if (!$post->getPublishedAt()) {
                 $post->setPublishedAt(new \DateTimeImmutable());

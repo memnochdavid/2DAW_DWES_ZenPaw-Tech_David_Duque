@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New User{% endblock %}
+
+{% block body %}
+    <main>
+        <div class="title-section">
+            <h1>Create new User</h1>
+        </div>
+
+        <div class="form-content">
+            {{ include('user/_form.html.twig') }}
+        </div>
+    </main>
+{% endblock %}
