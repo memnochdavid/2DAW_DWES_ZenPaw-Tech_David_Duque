@@ -13,6 +13,7 @@ class PostType extends AbstractType
     {
         $builder
             ->add('title')
+            ->add('autor')
             ->add('slug')
             ->add('summary')
             ->add('content')
@@ -30,4 +31,5 @@ class PostType extends AbstractType
             'data_class' => Post::class,
         ]);
     }
+
 }

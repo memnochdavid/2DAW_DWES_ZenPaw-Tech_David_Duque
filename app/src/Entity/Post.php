@@ -29,6 +29,9 @@ class Post
     #[ORM\Column]
     private ?\DateTimeImmutable $publishedAt = null;
 
+    #[ORM\Column(length: 75)]
+    private ?string $autor = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -90,6 +93,18 @@ class Post
     public function setPublishedAt(\DateTimeImmutable $publishedAt): static
     {
         $this->publishedAt = $publishedAt;
+
+        return $this;
+    }
+
+    public function getAutor(): ?string
+    {
+        return $this->autor;
+    }
+
+    public function setAutor(string $autor): static
+    {
+        $this->autor = $autor;
 
         return $this;
     }

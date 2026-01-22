@@ -23,7 +23,7 @@
                     </div>
                     <p class="post-summary">{{ post.summary }}</p>
                     <div class="post-date">
-                        <p>Publicado el {{ post.publishedAt|date('d/m/Y') }}</p>
+                        <p>Publicado el {{ post.publishedAt|date('d/m/Y') }} por {{ post.autor|capitalize }}</p>
                     </div>
                 </article>
             {% else %}
